@@ -23,7 +23,7 @@ def get_parquet_data(bucket_name, key):
     '''Downloads data from ingested bucket in parquet format and then saves it locally to a csv'''
     try:
         buffer = io.BytesIO()
-        client = boto3.resource('s3', aws_access_key_id=credentials[4], aws_secret_access_key=credentials[5])
+        client = boto3.resource('s3', aws_access_key_id='', aws_secret_access_key='')
         object = client.Object(bucket_name, key)
         object.download_fileobj(buffer)
 
